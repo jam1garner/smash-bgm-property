@@ -1,8 +1,11 @@
 [package]
 name = "smash-bgm-property"
-version = "0.8.0"
+version = "1.0.0"
 authors = ["jam1garner <8260240+jam1garner@users.noreply.github.com>"]
 edition = "2018"
+description = "A Rust library for working with `bgm_property.bin` files from Smash Ultimate"
+license = "MIT"
+repository = "https://github.com/jam1garner/smash-bgm-property"
 
 [lib]
 name = "bgm_property"
