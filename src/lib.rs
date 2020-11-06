@@ -64,7 +64,7 @@ pub struct BgmPropertyFile (
     u32,
 
     #[br(count = self_0)]
-    Vec<Entry>,
+    pub Vec<Entry>,
 );
 
 impl BinWrite for BgmPropertyFile {
