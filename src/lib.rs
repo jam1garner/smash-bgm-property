@@ -81,7 +81,7 @@ impl BinWrite for BgmPropertyFile {
 #[cfg_attr(feature = "derive_serde", derive(Serialize, Deserialize))]
 #[derive(BinRead, BinWrite, Debug)]
 pub struct Entry {
-    #[serde(with = "serde_hash40")]
+    #[cfg_attr(feature = "derive_serde", serde(with = "serde_hash40"))]
     pub name_id: Hash40,
     pub unk: u32,
     pub loop_start_sample: u32,
