@@ -69,25 +69,27 @@ pub struct BgmPropertyFile (
 
 impl BinWrite for BgmPropertyFile {
     fn write_options<W: Write>(&self, writer: &mut W, options: &WriterOption) -> io::Result<()> {
+        let mut entries = self.0.clone();
+        entries.sort_unstable_by(|a, b| a.name_id.cmp(&b.name_id));
         (
             "PMGB",
             self.0.len() as u32,
-            &self.0
+            entries
         ).write_options(writer, options)
     }
 }
 
 /// An entry representing a single nus3audio background music file
 #[cfg_attr(feature = "derive_serde", derive(Serialize, Deserialize))]
-#[derive(BinRead, BinWrite, Debug)]
+#[derive(BinRead, BinWrite, Debug, Clone)]
 pub struct Entry {
     #[cfg_attr(feature = "derive_serde", serde(with = "serde_hash40"))]
     pub name_id: Hash40,
-    pub unk: u32,
+    pub loop_start_ms: u32,
     pub loop_start_sample: u32,
-    pub unk_sample: u32,
+    pub loop_end_ms: u32,
     pub loop_end_sample: u32,
-    pub unk2: u32,
+    pub total_time_ms: u32,
     
     #[br(pad_after = 4)]
     #[binwrite(pad_after(0x4))]
