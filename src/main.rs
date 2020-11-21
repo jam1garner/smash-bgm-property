@@ -5,11 +5,12 @@ use std::path::{Path, PathBuf};
 use std::fs;
 
 #[derive(StructOpt)]
+#[structopt(about = "A tool for converting between Smash Ultimate bgm_property.bin files and yaml")]
 struct Args {
     in_file: PathBuf,
     out_file: PathBuf,
 
-    #[structopt(short, long)]
+    #[structopt(short, long, help = "newline-separated hash labels to use")]
     labels: Option<PathBuf>,
 }
 
