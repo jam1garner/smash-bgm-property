@@ -25,7 +25,7 @@ use binwrite::{BinWrite, WriterOption};
 
 use std::fs::File;
 use std::path::Path;
-use std::io::{self, Write, BufReader, BufWriter};
+use std::io::{self, Write, BufReader, BufWriter, Cursor};
 
 #[cfg(feature = "derive_serde")]
 use serde::{Serialize, Deserialize};
@@ -161,6 +161,9 @@ impl BgmPropertyFile {
         BufReader::new(File::open(path)?).read_le()
     }
 
+    pub fn read_from_bytes(data: &[u8]) -> Result<Self> {
+        Cursor::new(data).read_le()
+    }
     pub fn save<P: AsRef<Path>>(&self, path: P) -> Result<()> {
         self.write(&mut BufWriter::new(File::create(path)?))
     }
