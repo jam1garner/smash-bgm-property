@@ -1,0 +1,10 @@
+[package]
+name = "bgm_property_yaml"
+version = "1.2.0"
+authors = ["jam1garner <8260240+jam1garner@users.noreply.github.com>"]
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.3", features = ["derive"] }
+bgm_property_lib = { path = "../bgm_property_lib", features = ["serde"] }
+serde_yaml = { version = "0.9" }
