@@ -1,6 +1,10 @@
-# bgm_property_lib
+# smash-bgm-property
 
 A Rust library for reading and writing `bgm_property.bin` files from Super Smash Bros. Ultimate.
+
+```
+cargo add smash-bgm-property
+```
 
 ## bgm_property_yaml
 

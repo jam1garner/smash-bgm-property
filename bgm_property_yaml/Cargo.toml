@@ -6,5 +6,5 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.3", features = ["derive"] }
-bgm_property_lib = { path = "../bgm_property_lib", features = ["serde"] }
+smash-bgm-property = { path = "../smash-bgm-property", features = ["serde"] }
 serde_yaml = { version = "0.9" }

@@ -3,7 +3,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use bgm_property_lib::{BgmPropertyFile, Hash40};
+use smash_bgm_property::{BgmPropertyFile, Hash40};
 use clap::Parser;
 
 /// Convert bgm_property.bin files to and from YAML

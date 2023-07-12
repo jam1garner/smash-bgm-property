@@ -1,2 +1,2 @@
 [workspace]
-members = ["bgm_property_lib", "bgm_property_yaml"]
+members = ["smash-bgm-property", "bgm_property_yaml"]
